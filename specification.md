@@ -395,8 +395,8 @@ See paragraph 5.1 of [WCA Competition Requirements Policy](https://www.worldcube
 | Attribute | Type | Description |
 | --- | --- | --- |
 | `whenDate` | [`Date`](#date) | The date by which the qualification requirement must be satisfied.  If a result is set in a multiple-day competition which begins by this date, that is considered to have been set by this date. |
-| `type` | `"single"\|"average"\|"ranking"` | The type of result the requirement refers to. |
-| `level` | [`AttemptResult`](#attemptresult)\|[`Ranking`](#ranking) | The parameter of the qualification condition of the given type. |
+| `type` | `"single"\|"average"\|"ranking"\|"any_result"` | The type of result the requirement refers to. |
+| `level` | [`AttemptResult`](#attemptresult)\|[`Ranking`](#ranking)\|null | The parameter of the qualification condition of the given type. Should be `null` if `type` is `any_result`. |
 
 #### Examples
 
@@ -413,6 +413,13 @@ See paragraph 5.1 of [WCA Competition Requirements Policy](https://www.worldcube
   "whenDate": "2020-04-25",
   "type": "ranking",
   "level": 50
+}
+```
+
+```json
+{
+  "whenDate": "2020-04-25",
+  "type": "any_result",
 }
 ```
 
